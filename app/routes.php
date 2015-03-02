@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/a', function()
+Route::get('/', function()
 {
 	return View::make('hello');
 });
@@ -21,3 +21,5 @@ Route::get('/b',function()
 	return 'aaaa';
 		
 });
+
+Route::get('/fuck', 'HomeController@fuckyou');

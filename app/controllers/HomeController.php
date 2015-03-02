@@ -21,7 +21,7 @@ class HomeController extends BaseController {
 	}
 
 	public function fuckyou() {
-		return view::make('aa');
+		return View::make('aa');
 	}
 
 }
