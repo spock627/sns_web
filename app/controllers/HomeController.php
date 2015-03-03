@@ -29,9 +29,12 @@ class HomeController extends BaseController {
 	}	
 
 	public function postAdd() {
-//		return 'aaa';
 		$input = Input::all();
-		var_dump($input);
+		if($input) {
+			DB::insert('insert into users (id,name,email,password) values (?,?,?,?)', array(1, $input['name'], $input['email'], $input['password']));
+		}
+		
+		return View::make('aa');
 
 	}
 
