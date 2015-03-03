@@ -15,13 +15,24 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function getIndex()
 	{
-		return View::make('hello');
+		return View::make('mike');
 	}
 
-	public function fuckyou() {
+	public function getFuck() {		
 		return View::make('aa');
+	}
+
+	public function getRegister() {
+		return View::make('register');
+	}	
+
+	public function postAdd() {
+//		return 'aaa';
+		$input = Input::all();
+		var_dump($input);
+
 	}
 
 }
