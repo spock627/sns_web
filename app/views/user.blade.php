@@ -15,7 +15,13 @@
 					<td>{{ $user->password }}</td>
 				</tr>
             @endforeach
-
 		</table>
+		<div>
+			<span>
+				<a href="#">test</a>
+			</span>
+		</div>
 	</body>
 </html>
+
+
