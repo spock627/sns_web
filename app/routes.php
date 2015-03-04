@@ -31,5 +31,7 @@ Route::get('/', function()
 //Route::get('/fuck', 'HomeController@fuckyou');
 //Route::get('/register', 'HomeController@register');
 //Route::get('/addUser', 'HomeController@addUser');
-
+Route::get("/fuck",function(){
+	return 'First Commit';
+});
 Route::controller('/', 'HomeController');
