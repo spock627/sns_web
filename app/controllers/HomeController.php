@@ -31,11 +31,26 @@ class HomeController extends BaseController {
 	public function postAdd() {
 		$input = Input::all();
 		if($input) {
-			DB::insert('insert into users (id,name,email,password) values (?,?,?,?)', array(1, $input['name'], $input['email'], $input['password']));
+			DB::insert('insert into users (name,email,password) values (?,?,?)', array( $input['name'], $input['email'], $input['password']));
 		}
 		
-		return View::make('aa');
+		
+		return Redirect::to('user');
 
+	}
+	
+	public function getUser() {
+		$results = DB::select('select * from users');
+//
+//		foreach ($results as $key => $val) {
+//			foreach($val as $k => $v) {
+//				$data[$key][$k] = $v;
+//			}
+//		}
+//		echo "<pre>";
+//		var_dump($data);
+//die();
+		return View::make('user')->with('data',$results);
 	}
 
 }
