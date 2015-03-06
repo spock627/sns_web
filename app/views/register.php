@@ -55,9 +55,8 @@
 			<form method="post" action="add" name="contactform" id="contactform">
 
 				<div class="row"><div class="field"><input type="text" id="name" name="name" placeholder="Your Name"></div></div>
-				<div class="row"><div class="field"><input type="text" id="email" name="email" placeholder="Your Email"></div></div>
 				<div class="row"><div class="field"><input name="password" type="text" id="password" placeholder="Password"></div></div>
-
+                <div class="row"><div class="field"><input type="text" id="email" name="email" placeholder="Your Email"></div></div>
 
 		<div style="display: none;">
 			<label for="subject" accesskey="S">Subject</label>
@@ -69,9 +68,11 @@
 			
 		</div>
 			
-				<input type="submit" class="button" value="Submit" id="fuckbitch">
+				<input type="submit" class="button" value="注册" id="fuckbitch" style="font-size: large"/>
 				</form>
-				
+              <form method="get" action="lo" name="contactform" id="loginForm">
+                <input type="submit" class="button" value="登录" id="loginBtn" style="font-size: large"/>
+              </form>
 				
 			<div style="clear: both;"> </div>
 			</div>

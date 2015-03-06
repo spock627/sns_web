@@ -19,11 +19,9 @@ class HomeController extends BaseController {
 	{
 		return View::make('mike');
 	}
-
 	public function getFuck() {		
 		return View::make('aa');
 	}
-
 	public function getRegister() {
 		return View::make('register');
 	}	
@@ -50,7 +48,11 @@ class HomeController extends BaseController {
 //		echo "<pre>";
 //		var_dump($data);
 //die();
+		$resultCount=DB::select('select count(id) as count from users');
 		return View::make('user')->with('data',$results);
 	}
-
+	public function getUserCount(){
+		$resultCount=DB::select('select count(id) as count from users');
+		return $resultCount[0]->count;
+	}
 }
