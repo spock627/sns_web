@@ -1,14 +1,23 @@
 #container{
 	border: solid gray 1px;
 	border-radius:3px;
-	width:300px;
-	margin-left: 10px;
+	width:97%;
+	margin: 10px 10px 10px 20px;
 	background-color:#1ABC9C;
+	height:550px
 }
 #hb{
 	background-color: #1ABC9C;
 	border-radius:3px;
 }
 #loginForm{
-	margin-left: 10px;
+	margin-left: 20px;
+}
+
+#formm{
+	margin-left:38%;
+}
+
+#headImg{
+	margin-left:38%;
 }

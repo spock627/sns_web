@@ -11,27 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-//
-Route::get('/b',function()
-{
-	return 'aaaa';
-
-});
-//Route::get('/test',function()
-//	{
-//		    return 'fuck bitch';
-//
-//	});
-//
-//Route::Controller('/', 'HomeController@index');
-//Route::get('/fuck', 'HomeController@fuckyou');
-//Route::get('/register', 'HomeController@register');
-//Route::get('/addUser', 'HomeController@addUser');
-Route::get("/lo",function(){
-	return View::make('login.login');
-});
 Route::controller('/', 'HomeController');
+Route::controller('/register', 'RegisterController');
+

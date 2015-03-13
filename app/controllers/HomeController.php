@@ -55,4 +55,20 @@ class HomeController extends BaseController {
 		$resultCount=DB::select('select count(id) as count from users');
 		return $resultCount[0]->count;
 	}
+	
+	public function getLo() {
+		return View::make('login.login');
+	}
+
+	public function postEnter() {
+		$input = Input::all();
+		$user = DB::table('users')->where('email',$input['email'])->first();
+		$password = $user->password;
+		if($input['password'] == $password) {
+			return Redirect::to('index');
+		} else {
+			return Redirect::to('lo');
+		}
+	}
+
 }
