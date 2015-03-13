@@ -1,13 +1,13 @@
 <?php
 class RegisterController extends BaseController {
 	
-	public function index() {
+	public function getIndex() {
 		return View::make('register.php');
 	}
 
-	//注册用户
-	public function addUser() {
-		
+
+	public function getLogin() {
+		return View::make('login.login');
 	}
 
 }
