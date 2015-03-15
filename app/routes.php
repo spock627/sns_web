@@ -13,7 +13,15 @@
 Route::get('/test',function(){
     return "test";
 });
-Route::controller('/', 'HomeController');
+Route::get('/home',function(){
+    return View::make('contents.home');
+});
+Route::any('/updateSave',function(){
+    return View::make('contents.update');
+});
 Route::controller('/register', 'RegisterController');
+Route::controller('/', 'HomeController');
+
+
 
 

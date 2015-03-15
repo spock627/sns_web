@@ -35,7 +35,7 @@
 				<button type='submit' class="btn  btn-lg" onclick="checkValidate()">&nbsp;登录&nbsp;</button>
 				</div>
 				<hr/>
-			</form>
+		</form>
     </div>
 </div>
 {{ HTML::script('common/js/jquery-1.6.min.js') }}
@@ -43,4 +43,4 @@
 {{ HTML::script('login/js/login.js') }}
 </body>
 </html>
-<script>
+
