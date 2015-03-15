@@ -22,24 +22,25 @@
 	</div>
 	<div style="height:30px"></div>
 	<div style="width:280px" id='formm'>
-		<form role="form" id="userLogin" action='enter' method="post">
+		<form role="form" id="userLogin" action="enter" method="post">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email address</label>
-					<input	type="email" class="form-control" id="exampleInputEmail1" name="email"  placeholder="Enter email">
+					<input	type="email" class="form-control" id="InputEmail" name="email"  placeholder="Enter email">
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1"/>Password</label> 
-					<input	type="password" class="form-control" id="exampleInputPassword1" name="password"	placeholder="Password">
+					<input	type="password" class="form-control" id="InputPassword" name="password"	placeholder="Password">
 				</div>
 				<div align="center">
-				<button type='submit' class="button defaut-button">登录</button>
+				<button type='submit' class="btn  btn-lg" onclick="checkValidate()">&nbsp;登录&nbsp;</button>
 				</div>
 				<hr/>
 			</form>
     </div>
 </div>
-<script type="text/javascript" src="../../../public/common/js/jquery-1.6.min.js"></script>
-<script type="text/javascript" src="../../../public/common/js/bootstrap.min.js"></script>
+{{ HTML::script('common/js/jquery-1.6.min.js') }}
+{{ HTML::script('common/js/bootstrap.min.js') }}
+{{ HTML::script('login/js/login.js') }}
 </body>
 </html>
 <script>
