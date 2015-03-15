@@ -72,12 +72,18 @@ class HomeController extends BaseController {
 	public function postEnter() {
 		$input = Input::all();
 		$user = DB::table('users')->where('email',$input['email'])->first();
-		$password = $user->password;
-		if($input['password'] == $password) {
-			return Redirect::to('index');
-		} else {
-			return Redirect::to('lo');
-		}
+        //如果用户信息获取不为空再判断，解决用户信息为空后提示non-object的问题
+        if($user!=null){
+            $password = $user->password;
+            if($input['password'] == $password) {
+                return Redirect::to('index');
+            } else {
+                return Redirect::to('lo');
+            }
+        }else{
+            return Redirect::to('lo');
+        }
+
 	}
 
 }
