@@ -22,9 +22,10 @@ class HomeController extends BaseController {
 	public function getFuck() {		
 		return View::make('aa');
 	}
-	public function getRegister() {
+	/*public function getRegister() {
 		return View::make('register');
-	}	
+	}*/
+
 
 	public function postAdd() {
 		$input = Input::all();

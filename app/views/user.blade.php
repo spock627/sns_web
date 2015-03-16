@@ -20,7 +20,7 @@
 		</table>
 		<div>
 			<span>
-				<a href="#">test</a>
+				<a href="/register" target="blank">返回注册页面</a>
 			</span>
 		</div>
 	</body>
