@@ -31,26 +31,16 @@ class HomeController extends BaseController {
 		if($input) {
 			DB::insert('insert into users (name,email,password) values (?,?,?)', array( $input['name'], $input['email'], $input['password']));
 		}
-		
-		
 		return Redirect::to('user');
 
 	}
 	
 	public function getUser() {
 		$results = DB::select('select * from users');
-//
-//		foreach ($results as $key => $val) {
-//			foreach($val as $k => $v) {
-//				$data[$key][$k] = $v;
-//			}
-//		}
-//		echo "<pre>";
-//		var_dump($data);
-//die();
 		$resultCount=DB::select('select count(id) as count from users');
 		return View::make('user')->with('data',$results);
 	}
+<<<<<<< HEAD
 
 	public function postDel() {
 		$input = Input::all();
@@ -62,13 +52,16 @@ class HomeController extends BaseController {
 
 	public function getUserCount(){
 		$resultCount=DB::select('select count(id) as count from users');
+=======
+	public function getUserCount()
+	{
+		$resultCount = DB::select('select count(id) as count from users');
+>>>>>>> dc06548c65d20ec44c44ed7e37f828bfed028778
 		return $resultCount[0]->count;
 	}
-	
 	public function getLo() {
 		return View::make('login.login');
 	}
-
 	public function postEnter() {
 		$input = Input::all();
 		$user = DB::table('users')->where('email',$input['email'])->first();
@@ -76,13 +69,19 @@ class HomeController extends BaseController {
         if($user!=null){
             $password = $user->password;
             if($input['password'] == $password) {
-                return Redirect::to('index');
+                return Redirect::to('home')->with('userInfo',$user->name."(".$user->id.")");
             } else {
                 return Redirect::to('lo');
             }
         }else{
             return Redirect::to('lo');
         }
+
+	}
+	public function postUpdate(){
+		$input = Input::all();
+		$userName=Input::get('username');
+		echo "用户名修改为$userName";
 
 	}
 
