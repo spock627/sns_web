@@ -22,9 +22,10 @@ class HomeController extends BaseController {
 	public function getFuck() {		
 		return View::make('aa');
 	}
-	public function getRegister() {
+	/*public function getRegister() {
 		return View::make('register');
-	}	
+	}*/
+
 
 	public function postAdd() {
 		$input = Input::all();
@@ -40,8 +41,17 @@ class HomeController extends BaseController {
 		$resultCount=DB::select('select count(id) as count from users');
 		return View::make('user')->with('data',$results);
 	}
-	public function getUserCount()
-	{
+
+	public function postDel() {
+		$input = Input::all();
+		DB::table('users')->where('id', '=', $input['uid'])->delete();
+		$data['ec'] = 200;
+		$data['em'] = 'ok';
+		echo json_encode($data);
+	}
+
+	public function getUserCount(){
+		$resultCount=DB::select('select count(id) as count from users');
 		$resultCount = DB::select('select count(id) as count from users');
 		return $resultCount[0]->count;
 	}
