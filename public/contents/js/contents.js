@@ -5,7 +5,7 @@ $(function(){
     initUserData();
 });
 function updateInfo(){
-    location.href="/updateSave";
+    location.href="updateSave";
 }
 function initUserData(){
     var age=getParamter("age");
