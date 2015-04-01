@@ -33,13 +33,15 @@
         </div>
         <div class="message">
             <div class="content">content</div>
-
         </div>
         <div>
-            <button type="button" class="btn btn-success">评论</button>
+            <button type="button"  class="btn btn-success replyBtn">评论</button>
             <button type="button" class="btn btn-default">转发</button>
         </div>
-
+        <div class="reply">
+            <textarea id="userReply" class="form-control" rows="3"></textarea>
+            <button type="button" class="btn btn-success confirmBtn">确认</button>
+        </div>
     </div>
 </div>
 </body>

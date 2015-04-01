@@ -29,6 +29,6 @@ class MessageController extends BaseController{
         }else{
             $result="error";
         }
-        return $content;
+        return $result;
     }
 }

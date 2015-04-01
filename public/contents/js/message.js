@@ -1,3 +1,18 @@
+/*
+* 页面加载时方法
+* */
+$(function(){
+    $(".reply").hide();
+    replyHander();
+});
+function replyHander(){
+    $(".replyBtn").click(function(){
+        $(".reply").show();
+    });
+    $(".confirmBtn").click(function(){
+        $(".reply").hide();
+    });
+}
 /**
  * 发表内容
  * */
@@ -17,7 +32,6 @@ function publish(){
                 "content":text
             },
             success:function(data){
-                alert(data);
                 if(data=="success"){
                     var html='<div class="messageHead">' +
                         '<div class="headImg"><img src="common/image/cat.jpg" class="img-circle himg"></div> ' +
@@ -33,7 +47,7 @@ function publish(){
                         '</div>';
                     $('#messageList').append(html);
                 }else{
-
+                    alert(data);
                 }
             },
             error:function(e){
