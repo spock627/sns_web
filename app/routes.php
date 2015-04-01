@@ -19,6 +19,7 @@ Route::get('/home',function(){
 Route::any('/updateSave',function(){
     return View::make('contents.update');
 });
+Route::controller('/message', 'MessageController');
 Route::controller('/register', 'RegisterController');
 Route::controller('/', 'HomeController');
 

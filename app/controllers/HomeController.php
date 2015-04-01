@@ -65,7 +65,9 @@ class HomeController extends BaseController {
         if($user!=null){
             $password = $user->password;
             if($input['password'] == $password) {
-                return Redirect::to('home')->with('userInfo',$user->name."(".$user->id.")");
+				Session::put('userInfo',$user->name);
+				Session::put('uid',$user->id);
+                return Redirect::to('home');
             } else {
                 return Redirect::to('lo');
             }
@@ -80,5 +82,4 @@ class HomeController extends BaseController {
 		echo "用户名修改为$userName";
 
 	}
-
 }

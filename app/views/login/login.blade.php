@@ -22,7 +22,7 @@
 	</div>
 	<div style="height:30px"></div>
 	<div style="width:280px" id='formm'>
-		<form role="form" id="userLogin" action="enter" method="post">
+		<form role="form" id="userLogin" action="enter" method="post" onsubmit="checkValidate()">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email address</label>
 					<input	type="email" class="form-control" id="InputEmail" name="email"  placeholder="Enter email">
@@ -32,15 +32,15 @@
 					<input	type="password" class="form-control" id="InputPassword" name="password"	placeholder="Password">
 				</div>
 				<div align="center">
-				<button type='submit' class="btn  btn-lg" onclick="checkValidate()">&nbsp;登录&nbsp;</button>
+				<button type='submit' class="btn  btn-lg">&nbsp;登录&nbsp;</button>
 				</div>
 				<hr/>
 		</form>
     </div>
 </div>
+</body>
 {{ HTML::script('common/js/jquery-1.6.min.js') }}
 {{ HTML::script('common/js/bootstrap.min.js') }}
 {{ HTML::script('login/js/login.js') }}
-</body>
 </html>
 

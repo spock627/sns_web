@@ -1,0 +1,63 @@
+div{
+
+}
+#container{
+    height: 800px;
+    width: 600px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius:5px;
+}
+#contentArea{
+    width: 98%;
+    height: 15%;
+    border: solid #dcdcdc 1px
+}
+#textArea{
+    width: 95%;
+    float: left;
+}
+.pBtn{
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+#messageList{
+    margin-top: 40px;
+    height: 150px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: 98%;
+}
+.messageHead{
+    border: solid #dcdcdc 1px;
+    height: 70px;
+}
+.message{
+    height: 80px;
+}
+.himg{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+.headImg{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.content{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.mtime{
+    float: left;
+    margin-top:40px;
+    margin-left:10px;
+}
+.mview{
+    float: left;
+    margin-top:40px;
+    margin-left:10px;
+}

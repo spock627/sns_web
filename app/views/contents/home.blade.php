@@ -7,7 +7,7 @@
     <title>个人信息</title>
     {{ HTML::style('contents/css/contents.css') }}
     {{ HTML::style('common/css/bootstrap.css') }}
-    {{ HTML::style('common/css/bootstrap.css') }}
+    {{ HTML::style('common/css/bootstrap-theme.css') }}
 </head>
 <body>
     <div id="container">

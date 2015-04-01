@@ -20,12 +20,13 @@
 		</table>
 		<div>
 			<span>
-				<a href="/register" target="blank">返回注册页面</a>
+				<a href="register" target="blank">返回注册页面</a>
 			</span>
 		</div>
 	</body>
 </html>
-<script type="text/javascript" src="/common/js/jquery-1.6.min.js"></script>
+{{ HTML::script('common/js/jquery-1.6.min.js') }}
+{{ HTML::script('common/js/bootstrap.min.js') }}
 <script>
 	$('.del').click(function() {
 		var uid = $(this).attr('data-id');
