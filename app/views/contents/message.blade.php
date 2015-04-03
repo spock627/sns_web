@@ -47,5 +47,6 @@
 </body>
 {{HTML::script('common/js/jquery-1.6.min.js')}}
 {{HTML::script('common/js/bootstrap.min.js')}}
+{{HTML::script('common/js/common.js')}}
 {{HTML::script('contents/js/message.js')}}
 </html>

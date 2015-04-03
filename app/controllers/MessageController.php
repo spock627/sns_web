@@ -11,15 +11,13 @@ class MessageController extends BaseController{
     /*
      * 显示消息列表
      * */
-    public function getIndex()
-    {
+    public function getIndex(){
         return View::make('contents.message');
     }
     /*
      * 插入消息记录
      * */
-    public function postInsert()
-    {
+    public function postInsert(){
         $input = Input::all();
         $uid= $input["uid"];
         $content= $input["content"];
@@ -31,4 +29,11 @@ class MessageController extends BaseController{
         }
         return $result;
     }
+    /*
+     * 获取消息记录
+     * */
+    public function postGetAll(){
+
+    }
+
 }
