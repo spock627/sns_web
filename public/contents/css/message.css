@@ -1,6 +1,4 @@
-div{
 
-}
 #container{
     height: 800px;
     width: 600px;
@@ -11,16 +9,19 @@ div{
 #contentArea{
     width: 98%;
     height: 15%;
-    border: solid #dcdcdc 1px
+    border: solid #dcdcdc 1px;
 }
 #textArea{
     width: 95%;
     float: left;
 }
+#publish{
+    height: 40px;
+    margin-top: 10px;
+}
 .pBtn{
-    float: right;
-    margin-top: 5px;
     margin-right: 10px;
+    float: right;
 }
 #messageList{
     margin-top: 40px;
@@ -60,4 +61,13 @@ div{
     float: left;
     margin-top:40px;
     margin-left:10px;
+}
+.reply{
+    display: none;
+}
+textarea{
+    resize: none;
+}
+#viewMore{
+    cursor:pointer
 }

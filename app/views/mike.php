@@ -34,7 +34,7 @@
                       <li><a href="./Mike Ingham Design   Web & Graphic Designer in Derby_files/Mike Ingham Design   Web & Graphic Designer in Derby.html">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                       <li><a href="http://www.mikeinghamdesign.com/projects.php">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                       <li><a href="http://www.mikeinghamdesign.com/about.php">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="http://www.mikeinghamdesign.com/contact.php">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="register">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                     </ul>
                   </nav>
                 </div>
@@ -55,7 +55,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center animated fadeInUp delay-15s">
-                  <a href="register" class="learn-more-btn">Get in Touch</a>
+                  <a href="lo" class="learn-more-btn">Get in Touch</a>
                 </div>
               </div>
             </div>
@@ -63,6 +63,3 @@
         </header>        
 </body>
 </html>
-<script>
-console.log(allUnivList);
-</script>

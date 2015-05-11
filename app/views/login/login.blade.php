@@ -32,10 +32,11 @@
 					<input	type="password" class="form-control" id="InputPassword" name="password"	placeholder="Password">
 				</div>
 				<div align="center">
-				<button type='submit' class="btn  btn-lg">&nbsp;登录&nbsp;</button>
+				<button type='submit' class="btn btn-success btn-lg">&nbsp;登录&nbsp;</button>
 				</div>
-				<hr/>
 		</form>
+        <hr/>
+        <div align="center"><a href="register">注册新账号</a>|<a href="#">忘记密码</a>|<a href="#">意见反馈</a></div>
     </div>
 </div>
 </body>

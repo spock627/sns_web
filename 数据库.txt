@@ -1,15 +1,23 @@
-create database sns;
+﻿CREATE DATABASE sns DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 create table users(
 	id int not null primary key auto_increment,
 	name varchar(50),
 	email varchar(100),
 	password varchar(100)
 )
+default charset utf8;
 //消息表
 create table message(
 	mid int not null primary key auto_increment,
 	uid int not null,
 	content  varchar(200)
 )
-
-
+default charset utf8;
+//评论表
+create table comments(
+    id int not null primary key auto_increment,
+    mid int not null,
+    uid int not null,
+    content  varchar(200)
+)
+default charset utf8;
