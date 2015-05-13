@@ -13,39 +13,57 @@
 <div id="container">
     <div id="contentArea">
         <div id="textArea">
-           <textarea id="userText" class="form-control" rows="3"></textarea>
+           <textarea id="userText" class="form-control" rows="4"></textarea>
         </div>
         <div class="btn-group">
-            <button type="button" class="btn btn-default">image</button>
-            <button type="button" class="btn btn-default">media</button>
-            <button type="button" class="btn btn-default">demo</button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> 表情</button>
+            <button type="button" class="btn btn-default" onclick="uploadImg()"><span class="glyphicon glyphicon-picture"></span> 图片</button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-music"></span> 音乐</button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-hd-video"></span> 视频</button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
         </div>
     </div>
     <div id="publish">
         <button type="button" class="btn btn-success pBtn" onclick="publish()">Publish</button>
         <input id="uid" type="hidden" value="{{Session::get('uid')}}">
     </div>
+    <div id="msgHead">
+
+    </div>
     <div id="messageList">
+            <?php 
+                 $result = DB::table('message')->paginate(5);
+                 foreach ($result as $key => $record) {
+            ?>
         <div class="messageHead">
-            <div class="headImg"><img src="common/image/cat.jpg" class="img-circle himg"></div>
+            <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
             <div class="mtime">Time(<?php echo date('Y-m-d H:i:s');?>)</div>
             <div class="mview">View(45)</div>
+           
         </div>
         <div class="message">
-            <div class="content">content</div>
+            <div class="content">{{$record->content}}</div>
         </div>
-        <div>
-            <button type="button"  class="btn btn-success replyBtn">评论</button>
+
+        <div class="rep">
+            <button type="button" onclick="reply(this)" class="btn btn-success replyBtn">评论</button>
             <button type="button" class="btn btn-default">转发</button>
         </div>
         <div class="reply">
             <textarea id="userReply" class="form-control" rows="3"></textarea>
-            <button type="button" class="btn btn-success confirmBtn">确认</button>
+            <button type="button" onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>
+        </div>
+         <?php
+           }
+        ?>
+        <div align="center" class="">
+            <h3><span onclick="viewMore()" id="viewMore" class="label label-success">查看更多</span></h3>
         </div>
     </div>
 </div>
-</body>
 {{HTML::script('common/js/jquery-1.6.min.js')}}
 {{HTML::script('common/js/bootstrap.min.js')}}
+{{HTML::script('common/js/common.js')}}
 {{HTML::script('contents/js/message.js')}}
+</body>
 </html>

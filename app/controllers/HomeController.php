@@ -67,7 +67,7 @@ class HomeController extends BaseController {
             if($input['password'] == $password) {
 				Session::put('userInfo',$user->name);
 				Session::put('uid',$user->id);
-                return Redirect::to('home');
+                return Redirect::to('message');
             } else {
                 return Redirect::to('lo');
             }

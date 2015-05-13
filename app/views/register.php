@@ -10,7 +10,7 @@
 
 
       </head>
-      <body id="top">
+      <body id="top" style="background-color:#f3f5f8">
         <header id="home">
 		            <nav>
             <div class="container-fluid">
@@ -18,9 +18,9 @@
                 <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
                   <nav class="pull">
                     <ul class="top-nav">
-                      <li><a href="http://www.mikeinghamdesign.com/">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="http://www.mikeinghamdesign.com/projects.php">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="http://www.mikeinghamdesign.com/about.php">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="#">Home <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="#">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="#">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                       <li><a href="./Design_files/Design.html">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                     </ul>
                   </nav>
@@ -31,10 +31,10 @@
             <div class="container">
               <div class="row">
               	<div class="col-xs-8">
-              		<a href="http://www.mikeinghamdesign.com/" class="logo">Mike Ingham</a>
+              		<a href="#" class="logo">Mike Ingham</a>
               	</div>
                 <div class="col-xs-4 text-right navicon">
-                  <a id="nav-toggle" class="nav_slide_button" href="http://www.mikeinghamdesign.com/contact.php#"><span></span></a>
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
                 </div>
               </div>
             </div>
@@ -45,53 +45,39 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-            	<h1 class="inner-title">Get In Touch</h1>
+            	<h1 class="inner-title">Welcome</h1>
               </div>
               <div class="col-md-6 col-md-offset-3">
-                <div class="features-wrapper">
-
-			<div class="about-text">
-			<div id="message"></div>
-			<form method="post" action="add" name="contactform" id="contactform">
-
+      <div class="features-wrapper">
+			<form method="post" action="add" name="contactform" id="contactform" onsubmit="return check()">
+     <div>
 				<div class="row"><div class="field"><input type="text" id="name" name="name" placeholder="Your Name"></div></div>
-				<div class="row"><div class="field"><input name="password" type="text" id="password" placeholder="Password"></div></div>
-                <div class="row"><div class="field"><input type="text" id="email" name="email" placeholder="Your Email"></div></div>
-
-		<div style="display: none;">
-			<label for="subject" accesskey="S">Subject</label>
-			<select name="subject" id="subject">
-			  <option value="Support">Support</option>
-			  <option value="a Sale">Sales</option>
-			  <option value="a Bug fix">Report a bug</option>
-			</select>
-			
+				<div class="row"><div class="field"><input type="password" name="password" id="password" placeholder="Password"></div></div>
+        <div class="row"><div class="field"><input type="email" id="email" name="email" placeholder="Your Email"></div></div>
 		</div>
-			
 				<input type="submit" class="button" value="注册" id="fuckbitch" style="font-size: large"/>
-				</form>
-              <form method="get" action="lo" name="contactform" id="loginForm">
-                <input type="submit" class="button" value="登录" id="loginBtn" style="font-size: large"/>
-              </form>
-				
+		</form>
 			<div style="clear: both;"> </div>
-			</div>
-
-
-
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>      	
-		
-
-      
-    </body></html>
-    <script>
-      $('fuckbitch').click(function() {
-        
-        alert(111)
-      })
-    </script>
+		</div>
+      <div class="clearfix"></div>    
+    </body>
+<script src="common/js/jquery-1.6.min.js" type="text/javascript"></script>    
+<script type="text/javascript">
+  function check(){
+    var name=$('#name').val();
+    var pwd=$('#password').val();
+    var email=$('#email').val();
+    if(name.trim()==''){
+      $('#name').focus();
+      return false;
+    }
+     if(pwd.trim()==''){
+     $('#name').focus();
+      return false;
+    }
+    if(email.trim()==''){
+      return false;
+    }
+  }
+</script>
+    </html>
