@@ -13,6 +13,10 @@
 Route::get('/test',function(){
     return "test";
 });
+//发布状态时间轴功能
+Route::get('/timeline',function(){
+    return View::make('contents.timeline');
+});
 Route::get('/home',function(){
     return View::make('contents.home');
 });
