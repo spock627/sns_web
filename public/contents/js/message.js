@@ -33,7 +33,7 @@ function publish(){
             success:function(data){
                 if(data=="success"){
                     $('#userText').val("");//清空
-                    var html='<div class="messageHead">' +
+                    var html=' <div class="messagePanel"><div class="messageHead">' +
                         '<div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>'+
                         '<div class="mtime">'+'Time('+new Date().format("yyyy-MM-dd hh:mm:ss")+')</div>' +
                         '<div class="mview">View(45)</div> ' +
@@ -48,7 +48,7 @@ function publish(){
                         '<div class="reply" style="display:none">'+
                             '<textarea id="userReply" class="form-control" rows="3"></textarea>'+
                             '<button type="button"onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>'+
-                        '</div>';
+                        '</div></div>';
                     $('#messageList').prepend(html);
                 }else{
                     alert(data);

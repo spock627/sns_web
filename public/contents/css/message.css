@@ -1,7 +1,13 @@
-
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #FFFFFF;
+}
 #container{
-    height: 800px;
-    width: 600px;
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius:5px;
@@ -10,6 +16,10 @@
     width: 98%;
     height: 15%;
     border: solid #dcdcdc 1px;
+    background-color: white;
+     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius:5px;
 }
 #textArea{
     width: 95%;
@@ -25,15 +35,14 @@
 }
 #messageList{
     margin-top: 40px;
-    height: 150px;
+    height: auto;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     width: 98%;
 }
 .messageHead{
-    border: solid #dcdcdc 1px;
-    height: 70px;
+    height: 80px;
 }
 .message{
     height: 80px;
@@ -70,4 +79,15 @@ textarea{
 }
 #viewMore{
     cursor:pointer
+}
+.messagePanel{
+    margin-top:10px;
+    border: solid #dcdcdc 1px;
+    background-color: white;
+     border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius:2px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
 }

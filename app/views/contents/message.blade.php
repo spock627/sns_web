@@ -35,24 +35,26 @@
                  $result = DB::table('message')->paginate(5);
                  foreach ($result as $key => $record) {
             ?>
-        <div class="messageHead">
+        <div class="messagePanel">
+            <div class="messageHead">
             <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
             <div class="mtime">Time(<?php echo date('Y-m-d H:i:s');?>)</div>
             <div class="mview">View(45)</div>
-           
-        </div>
-        <div class="message">
-            <div class="content">{{$record->content}}</div>
-        </div>
+            </div>
+            <div class="message">
+                <div class="content">{{$record->content}}</div>
+            </div>
 
-        <div class="rep">
-            <button type="button" onclick="reply(this)" class="btn btn-success replyBtn">评论</button>
-            <button type="button" class="btn btn-default">转发</button>
-        </div>
-        <div class="reply">
-            <textarea id="userReply" class="form-control" rows="3"></textarea>
-            <button type="button" onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>
-        </div>
+            <div class="rep">
+                <button type="button" onclick="reply(this)" class="btn btn-success replyBtn">评论</button>
+                <button type="button" class="btn btn-default">转发</button>
+            </div>
+            <div class="reply">
+                <textarea id="userReply" class="form-control" rows="3"></textarea>
+                <button type="button" onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>
+            </div>
+        </div>    
+       
          <?php
            }
         ?>
