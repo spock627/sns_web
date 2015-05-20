@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Contact | Mike Ingham Design</title>
+	<title>Register</title>
     <link href="http://www.mikeinghamdesign.com/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://www.mikeinghamdesign.com/css/styles.css" rel="stylesheet">
 
@@ -31,7 +31,7 @@
             <div class="container">
               <div class="row">
               	<div class="col-xs-8">
-              		<a href="#" class="logo">Mike Ingham</a>
+              		<a href="#" class="logo">Register</a>
               	</div>
                 <div class="col-xs-4 text-right navicon">
                   <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
@@ -80,4 +80,4 @@
     }
   }
 </script>
-    </html>
+</html>

@@ -2,7 +2,9 @@
 * 页面加载时方法
 * */
 $(function(){
-    $(".reply").hide();
+    $(".replySubmit").hide();
+    var width=$(window).width();
+    $('#container').width(width);
 });
 function reply(id){
     var replyArea=$(id).parent().next();
@@ -33,7 +35,7 @@ function publish(){
             success:function(data){
                 if(data=="success"){
                     $('#userText').val("");//清空
-                    var html=' <div class="messagePanel"><div class="messageHead">' +
+                    var html='<div class="messagePanel"><div class="messageHead">' +
                         '<div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>'+
                         '<div class="mtime">'+'Time('+new Date().format("yyyy-MM-dd hh:mm:ss")+')</div>' +
                         '<div class="mview">View(45)</div> ' +
@@ -41,11 +43,17 @@ function publish(){
                         '<div class="message"> ' +
                         '<div class="content">'+text+'</div>' +
                         '</div>' +
-                        '<div class="rep">' +
-                        '<button type="button"  onclick="reply(this)" class="btn btn-success replyBtn">评论</button>'+
-                        '<button type="button"  class="btn btn-default">转发</button>'+
+                        '<div class="reply">' +
+                            '<div onclick="reply(this)" class="replyBtn comment-font">' +
+                                '<span class="glyphicon glyphicon-comment"></span>'+
+                                '<span class="comment-count">111</span>'+
+                            '</div>'+
+                            '<div class="comment-font" onclick="zan(this)">' +
+                                '<span class="glyphicon glyphicon-heart"></span>'+
+                                '<span class="zan-count">22</span>'+
+                            '</div>'+
                         '</div>'+
-                        '<div class="reply" style="display:none">'+
+                        '<div class="replySubmit" style="display:none">'+
                             '<textarea id="userReply" class="form-control" rows="3"></textarea>'+
                             '<button type="button"onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>'+
                         '</div></div>';
@@ -65,21 +73,25 @@ function uploadImg(){
     alert('上传图片');
 }
 //查看更多
-var count=0;
-function viewMore(){
+var count=1;
+function viewMore(id){
     var url=location.href;
-    if(url.indexOf('page')==-1){
+    if(url.indexOf('page')!=-1){
         count=1;
     }else{
+        count++;
         $.ajax({
             url: "message/currentpage",
-            type:"POST",
+            type:"post",
+            data:{
+                "page":count
+            },
             dataType:"json",
             async:false,
             success:function(data){
 
                 for(var i=0;i<data.length;i++){
-                    var html='<div class="messageHead">' +
+                    var html='<div class="messagePanel"><div class="messageHead">' +
                         '<div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>'+
                         '<div class="mtime">'+'Time('+new Date().format("yyyy-MM-dd hh:mm:ss")+')</div>' +
                         '<div class="mview">View(45)</div> ' +
@@ -87,21 +99,53 @@ function viewMore(){
                         '<div class="message"> ' +
                         '<div class="content">'+data[i].content+'</div>' +
                         '</div>' +
-                        '<div class="rep">' +
-                        '<button type="button"  onclick="reply(this)" class="btn btn-success replyBtn">评论</button>'+
-                        '<button type="button"  class="btn btn-default">转发</button>'+
+                        '<div class="reply">' +
+                        '<div onclick="reply(this)" class="replyBtn comment-font">' +
+                        '<span class="glyphicon glyphicon-comment"></span>'+
+                        '<span class="comment-count">111</span>'+
                         '</div>'+
-                        '<div class="reply" style="display:none">'+
+                        '<div class="comment-font" onclick="zan(this)">' +
+                        '<span class="glyphicon glyphicon-heart"></span>'+
+                        '<span class="zan-count">22</span>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="replySubmit" style="display:none">'+
                         '<textarea id="userReply" class="form-control" rows="3"></textarea>'+
                         '<button type="button"onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>'+
-                        '</div>';
+                        '</div></div>';
                     $('#messageList').append(html);
+                    $(id).parent().parent().remove();
                 }
+                $('#messageList').append(
+                    '<div align="center" class="">' +
+                    '<h3>' +
+                    '<span onclick="viewMore(this)" id="viewMore" class="label label-success">查看更多</span>' +
+                    '</h3> ' +
+                    '</div>'
+                );
             },
             error:function(data){
                 alert(JSON.stringify(data));
             }
 
         });
+    }
+}
+/**
+ * 点赞功能
+ * 点击第一次加一，第二次取消加一
+ * **/
+var zanFlag=false;
+function zan(id){
+    if(!zanFlag){
+        zanFlag=true;
+        var zanSpan=$(id).find('span').eq(1);
+        var result=Number(zanSpan.text())+1;
+        $(zanSpan).text(result);
+    }else{
+        zanFlag=false;
+        var zanSpan=$(id).find('span').eq(1);
+        var result=Number(zanSpan.text())-1;
+        $(zanSpan).text(result);
     }
 }

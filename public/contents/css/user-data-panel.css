@@ -1,0 +1,26 @@
+#user-data{
+    border: solid #dcdcdc 1px;
+    background-color: white;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius:2px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+    overflow:hidden;
+    width: 98%;
+    margin-left: 2px;
+}
+#user-data div{
+    float: left;
+    margin-right: 3px;
+    width: 95px;
+    text-align: center;
+}
+#user-data div span{
+    display: block;
+    line-height: 28px;
+}
+.clear{
+    clear:both;
+}
