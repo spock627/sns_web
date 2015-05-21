@@ -9,6 +9,7 @@
     {{ HTML::style('common/css/bootstrap-theme.css')}}
     {{ HTML::style('contents/css/message.css')}}
     {{ HTML::style('contents/css/user-data-panel.css')}}
+    {{ HTML::style('contents/css/message-comments.css')}}
 </head>
 <body>
 <div id="container">
@@ -61,15 +62,16 @@
                     <span class="zan-count">22</span>
                 </div>
             </div>
+            <!--引入评论-->
+            @include('contents.message-comments')
             <div class="replySubmit">
-                <textarea id="userReply" class="form-control" rows="3"></textarea>
+                <textarea class="userReply" class="form-control" rows="3"></textarea>
                 <button type="button" onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>
             </div>
         </div>
-
-         <?php
-           }
-        ?>
+             <?php
+                 }
+            ?>
                 <div style="clear:both"></div>
         <div align="center" class="more-list">
             <h3><span onclick="viewMore(this)" id="viewMore" class="label label-success">查看更多</span></h3>

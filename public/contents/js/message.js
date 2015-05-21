@@ -6,13 +6,12 @@ $(function(){
     var width=$(window).width();
     $('#container').width(width);
 });
+/**
+ * 点击评论按钮
+ * */
 function reply(id){
-    var replyArea=$(id).parent().next();
+    var replyArea=$(id).parent().parent().find('.replySubmit');
     replyArea.show();
-}
-function submitReply(id){
-    var replyArea=$(id).parent();
-    replyArea.hide();
 }
 /**
  * 发表内容
@@ -148,4 +147,43 @@ function zan(id){
         var result=Number(zanSpan.text())-1;
         $(zanSpan).text(result);
     }
+}
+
+/**
+ * 提交评论
+ * */
+function submitReply(id){
+    var replyArea=$(id).parent();
+    replyArea.hide();
+    var content=$(id).prev().val();
+    var html='<ul class="commnet-items">' +
+        '<li>' +
+            '<div class="comment-avatar"> ' +
+                '<a href="#"> ' +
+                    '<img src="common/image/cat.jpg" alt="avatar"/> ' +
+                '</a> ' +
+            '</div> ' +
+            '<div class="comment-content"> ' +
+                '<div class="content-detail"> ' +
+                    '<a href="#">昵称:</a>'
+             +content+
+                '</div> ' +
+                '<div class="comment-op"> ' +
+                    '<span class="time">今天'+new Date().format("hh:mm")+'</span>'+
+                        '<a href="#"> ' +
+                             '<span>回复</span> ' +
+                        '</a> ' +
+                '</div> ' +
+            '</div> ' +
+            '<div class="clear"></div> ' +
+            '<div class="comment-sub"> ' + '</div> ' +
+        '</li> ' +
+        '</ul>'
+    $(id).parent().prev().append(html);
+}
+/**
+ *
+ * **/
+function replyComment(){
+
 }

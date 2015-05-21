@@ -1,0 +1,33 @@
+.user-comments ul li{
+    list-style: none;
+}
+.user-comments .comment-avatar{
+    width: 32px;
+    height: 32px;
+    float: left;
+}
+.user-comments .comment-avatar img{
+    width: 30px;
+    height: 30px;
+}
+.user-comments .comment-content{
+    margin-left: 35px;
+    padding-right: 8px;
+}
+.content-detail{
+    margin-bottom: 4px;
+}
+.clear{
+    clear: both;
+}
+.comment-op .time{
+    color: #d3d3d3;
+}
+.comment-op span{
+    margin-right: 4px;
+}
+
+
+.user-comments div{
+    border: solid transparent 1px;
+}
