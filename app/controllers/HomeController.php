@@ -32,7 +32,7 @@ class HomeController extends BaseController {
 		if($input) {
 			DB::insert('insert into users (name,email,password) values (?,?,?)', array( $input['name'], $input['email'], $input['password']));
 		}
-		return Redirect::to('user');
+		return Redirect::to('lo');
 
 	}
 	

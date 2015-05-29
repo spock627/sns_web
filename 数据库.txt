@@ -6,14 +6,14 @@ create table users(
 	password varchar(100)
 )
 default charset utf8;
-//消息表
+/*!消息表*/
 create table message(
 	mid int not null primary key auto_increment,
 	uid int not null,
 	content  varchar(200)
 )
 default charset utf8;
-//评论表
+/*!评论表*/
 create table comments(
     id int not null primary key auto_increment,
     mid int not null,

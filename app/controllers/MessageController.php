@@ -49,5 +49,13 @@ class MessageController extends BaseController{
         }
         return json_encode($message);
     }
+    public function getCurrentpage(){
+        $result = DB::table('message')->paginate(5);
+        $message=array();
+        foreach ($result as $key => $record) {
+            $message[$key]=$record;
+        }
+        return json_encode($message);
+    }
 
 }

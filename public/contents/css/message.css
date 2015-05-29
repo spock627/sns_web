@@ -3,7 +3,7 @@ html{
     width: 100%;
 }
 body{
-    background-color: #FFFFFF;
+    background-color: #B4DAF1;
 }
 #container{
     height: 100%;
@@ -11,10 +11,12 @@ body{
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius:5px;
+    background-image: url("../image/body_bg.jpg");
+    background-repeat: repeat-x;
+    overflow:hidden
 }
 #contentArea{
     width: 98%;
-    height: 15%;
     border: solid #dcdcdc 1px;
     background-color: white;
      border-radius: 5px;
@@ -33,13 +35,18 @@ body{
     margin-right: 10px;
     float: right;
 }
+#left{
+    float: left;
+    margin-top:48px; ;
+}
 #messageList{
     margin-top: 40px;
     height: auto;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    width: 98%;
+    width: 600px;
+    float: left;
 }
 .messageHead{
     height: 80px;
@@ -71,8 +78,24 @@ body{
     margin-top:40px;
     margin-left:10px;
 }
-.reply{
+.replySubmit{
     display: none;
+    text-align: right;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.reply{
+    text-align: right;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.reply span{
+    font-size: large;
+}
+.comment-font{
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
 }
 textarea{
     resize: none;
@@ -84,10 +107,17 @@ textarea{
     margin-top:10px;
     border: solid #dcdcdc 1px;
     background-color: white;
-     border-radius: 2px;
+    border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius:2px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
     -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
     -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+}
+.more-list{
+    
+}
+.userReply{
+    width: 95%;
+    margin-right: 12px;
 }
