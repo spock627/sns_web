@@ -39,13 +39,13 @@
     </div>
     <div id="messageList">
             <?php 
-                 $result = DB::table('message')->paginate(5);
+                 $result = DB::table('messages')->orderBy('ctime', 'desc')->paginate(5);
                  foreach ($result as $key => $record) {
             ?>
         <div class="messagePanel">
             <div class="messageHead">
             <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
-            <div class="mtime">Time(<?php echo date('Y-m-d H:i:s');?>)</div>
+            <div class="mtime">Time(<?php echo date('Y-m-d H:i:s',$record->ctime)?>)</div>
             <div class="mview">View(45)</div>
             </div>
             <div class="message">

@@ -20,7 +20,8 @@ class MessageController extends BaseController{
         $input = Input::all();
         $uid= $input["uid"];
         $content= $input["content"];
-        $result=DB::insert('insert into message (uid,content) values (?,?)', array($uid,$content));
+        $time=time();
+        $result=DB::insert('insert into messages (uid,content,ctime,mtime) values (?,?,?,?)', array($uid,$content,$time,0));
         if($result){
             $result="success";
         }else{
@@ -32,7 +33,7 @@ class MessageController extends BaseController{
      * 获取消息记录
      * */
     public function getRecord(){
-        $result=DB::select('select mid,uid,content from message');
+        $result=DB::select('select mid,uid,content from messages');
         foreach($result as $list=>$record){
             echo $record->mid." ";
             echo $record->uid." ";
@@ -42,7 +43,7 @@ class MessageController extends BaseController{
     }
 
     public function postCurrentpage(){
-        $result = DB::table('message')->paginate(5);
+        $result = DB::table('messages')->paginate(5);
         $message=array();
         foreach ($result as $key => $record) {
             $message[$key]=$record;
@@ -50,7 +51,7 @@ class MessageController extends BaseController{
         return json_encode($message);
     }
     public function getCurrentpage(){
-        $result = DB::table('message')->paginate(5);
+        $result = DB::table('messages')->paginate(5);
         $message=array();
         foreach ($result as $key => $record) {
             $message[$key]=$record;
