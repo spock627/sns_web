@@ -33,7 +33,7 @@ function publish(){
                 "content":text
             },
             success:function(data){
-                if(data=="success"){
+                if(data>=0){
                     $('#userText').val("");//清空发表状态区域
                     var html='<div class="messagePanel"><div class="messageHead">' +
                         '<div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>'+
@@ -41,7 +41,7 @@ function publish(){
                         '<div class="mview">View(45)</div> ' +
                         '</div> ' +
                         '<div class="message"> ' +
-                        '<div class="content">'+text+'</div>' +
+                        '<div class="content" data-id='+data+'>'+text+'</div>' +
                         '</div>' +
                         '<div class="reply">' +
                             '<div onclick="reply(this)" class="replyBtn comment-font">' +

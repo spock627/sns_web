@@ -22,9 +22,12 @@ class MessageController extends BaseController{
         $uid= $input["uid"];
         $content= $input["content"];
         $time=time();
-        $result=DB::insert('insert into messages (uid,content,ctime,mtime) values (?,?,?,?)', array($uid,$content,$time,0));
-        if($result){
-            $result="success";
+        $result=null;
+        $id = DB::table('messages')->insertGetId(
+            array('uid' => $uid, 'content' =>$content,'ctime' =>$time,'mtime' => 0,)
+        );
+        if($id){
+            $result=$id;
         }else{
             $result="error";
         }
