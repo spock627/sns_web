@@ -23,7 +23,10 @@ Route::get('/home',function(){
 Route::any('/updateSave',function(){
     return View::make('contents.update');
 });
+//消息控制类
 Route::controller('/message', 'MessageController');
+//评论控制类
+Route::controller('/comment','CommentsController');
 Route::controller('/register', 'RegisterController');
 Route::controller('/', 'HomeController');
 

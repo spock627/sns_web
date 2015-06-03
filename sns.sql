@@ -26,9 +26,11 @@ CREATE TABLE `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
-  `content` varchar(200) DEFAULT NULL,
+  `content` text,
+  `ctime` int(11) NOT NULL,
+  `mtime` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +39,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,31,2,'d',1433324969,0),(2,30,2,'ddd',1433324975,0),(3,31,3,'ddd',1433325149,0),(4,30,3,'dafdsf',1433325153,0),(5,31,2,'sdsds',1433325157,0),(6,29,3,'asdfasdf',1433325158,0),(7,29,2,'dd',1433325394,0),(8,29,2,'ddddd',1433325449,0),(9,32,7,'dddd',1433325624,0),(10,32,7,'asdfasdf',1433325628,0);
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +57,7 @@ CREATE TABLE `messages` (
   `ctime` int(11) NOT NULL,
   `mtime` int(11) NOT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +66,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,2,'顶顶顶',1432543719,0),(2,2,'的',1432543724,0),(3,2,'ddd',1432543729,0),(4,2,'dd',1432544376,0),(5,2,'ddddd',1432544393,0),(6,2,'的',1432545383,0);
+INSERT INTO `messages` VALUES (29,2,'sd',1433323729,0),(30,2,'ddd',1433323733,0),(31,2,'asdfasd',1433323943,0),(32,2,'fuck ping\n',1433325514,0);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +106,7 @@ CREATE TABLE `users` (
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,7 +115,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'zheng','zheng@qq.com','zheng'),(3,'test','test@qq.com','test'),(4,'test','test@qq.com','test'),(5,'rr','rr@qq.ocm','rr');
+INSERT INTO `users` VALUES (2,'zheng','zheng@qq.com','zheng'),(3,'test','test@qq.com','test'),(4,'test','test@qq.com','test'),(5,'rr','rr@qq.ocm','rr'),(7,'dd','diaoyizi@126.com','dd');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -125,4 +128,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-03 13:25:00
+-- Dump completed on 2015-06-03 18:05:46

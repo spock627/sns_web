@@ -1,7 +1,8 @@
 <?php
+require app_path().'/config/appconfig.php';
 /**
  * Created by PhpStorm.
- * User: Administrator
+ * User: Zheng
  * Date: 2015/3/29
  * Time: 17:10
  */
@@ -41,22 +42,26 @@ class MessageController extends BaseController{
         }
        // return $result;
     }
-
+    /*
+     * 获取当前页的消息内容（post），每页显示5条
+     * */
     public function postCurrentpage(){
-        $result = DB::table('messages')->paginate(5);
+        $result = DB::table('messages')->paginate(PAGESIZE);
         $message=array();
         foreach ($result as $key => $record) {
             $message[$key]=$record;
         }
         return json_encode($message);
     }
+    /*
+     * 获取当前页的消息内容（get）
+     * */
     public function getCurrentpage(){
-        $result = DB::table('messages')->paginate(5);
+        $result = DB::table('messages')->paginate(PAGESIZE);
         $message=array();
         foreach ($result as $key => $record) {
             $message[$key]=$record;
         }
         return json_encode($message);
     }
-
 }

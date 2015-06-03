@@ -38,7 +38,7 @@
         @include('contents.user-data-panel')
     </div>
     <div id="messageList">
-            <?php 
+            <?php
                  $result = DB::table('messages')->orderBy('ctime', 'desc')->paginate(5);
                  foreach ($result as $key => $record) {
             ?>
@@ -49,7 +49,7 @@
             <div class="mview">View(45)</div>
             </div>
             <div class="message">
-                <div class="content">{{$record->content}}</div>
+                <div class="content" data-id="{{$record->mid}}"> {{$record->content}}</div>
             </div>
 
             <div class="reply">
@@ -65,7 +65,7 @@
             <!--引入评论-->
             @include('contents.message-comments')
             <div class="replySubmit">
-                <textarea class="userReply" class="form-control" rows="3"></textarea>
+                <textarea class="userReply" id="commentText" class="form-control" rows="3"></textarea>
                 <button type="button" onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>
             </div>
         </div>

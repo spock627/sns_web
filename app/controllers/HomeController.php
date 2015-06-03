@@ -1,4 +1,5 @@
 <?php
+require_once app_path().'/controllers/tools/User.php';
 class HomeController extends BaseController {
 
 	/*
@@ -80,5 +81,11 @@ class HomeController extends BaseController {
 		$userName=Input::get('username');
 		echo "用户名修改为$userName";
 
+	}
+	public function getName(){
+		$id=$_GET['uid'];
+		$user=new User();
+		$name=$user->getUserNameById($id);
+		return json_encode($name);
 	}
 }
