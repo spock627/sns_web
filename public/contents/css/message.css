@@ -5,6 +5,9 @@ html{
 body{
     background-color: #B4DAF1;
 }
+li{
+    list-style: none;
+}
 #container{
     height: 100%;
     width: 100%;

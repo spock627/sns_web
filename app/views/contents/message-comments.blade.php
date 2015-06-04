@@ -22,7 +22,7 @@
                     {{$comment->content}}
                 </div>
                 <div class="comment-op">
-                    <span class="time">今天{{date('H:i:s',$comment->ctime)}}</span>
+                    <span class="time">今天{{date('H:i',$comment->ctime)}}</span>
                     <a href="javascript:js_method();" onclick="replyComment(this)">
                         <span>回复</span>
                     </a>

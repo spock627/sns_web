@@ -9,6 +9,7 @@
     {{ HTML::style('common/css/bootstrap-theme.css')}}
     {{ HTML::style('contents/css/message.css')}}
     {{ HTML::style('contents/css/user-data-panel.css')}}
+    {{ HTML::style('contents/css/message-zanlist.css')}}
     {{ HTML::style('contents/css/message-comments.css')}}
 </head>
 <body>
@@ -44,10 +45,11 @@
             ?>
         <div class="messagePanel">
             <div class="messageHead">
-            <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
-            <div class="mtime">Time(<?php echo date('Y-m-d H:i:s',$record->ctime)?>)</div>
-            <div class="mview">View(45)</div>
+                <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
+                <div class="mtime">Time(<?php echo date('Y-m-d H:i:s',$record->ctime)?>)</div>
+                <div class="mview">View(45)</div>
             </div>
+
             <div class="message">
                 <div class="content" data-id="{{$record->mid}}"> {{$record->content}}</div>
             </div>
@@ -62,6 +64,8 @@
                     <span class="zan-count">22</span>
                 </div>
             </div>
+            <!--引入赞列表-->
+            @include('contents.message-zanlist')
             <!--引入评论-->
             @include('contents.message-comments')
             <div class="replySubmit">

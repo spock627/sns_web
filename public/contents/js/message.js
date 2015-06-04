@@ -146,11 +146,16 @@ function zan(id){
         var zanSpan=$(id).find('span').eq(1);
         var result=Number(zanSpan.text())+1;//赞数量加一
         $(zanSpan).text(result);
+        var zanid=$(id).find('span').eq(1).text();
+        var html='<li id='+zanid+'><img src="common/image/cat.jpg" class="img-rounded himg"></li>';
+        $(id).parent().next().find('.ul-h').append(html);
     }else{
         zanFlag=false;
         var zanSpan=$(id).find('span').eq(1);
+        var zanid=zanSpan.text();
         var result=Number(zanSpan.text())-1;//赞数量减一
         $(zanSpan).text(result);
+        $(id).parent().next().find('.ul-h').find("#"+zanid).remove();
     }
 }
 
