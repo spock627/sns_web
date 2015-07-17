@@ -9,6 +9,7 @@
     {{ HTML::style('common/css/bootstrap-theme.css')}}
     {{ HTML::style('contents/css/message.css')}}
     {{ HTML::style('contents/css/user-data-panel.css')}}
+    {{ HTML::style('contents/css/message-zanlist.css')}}
     {{ HTML::style('contents/css/message-comments.css')}}
 </head>
 <body>
@@ -38,18 +39,19 @@
         @include('contents.user-data-panel')
     </div>
     <div id="messageList">
-            <?php 
-                 $result = DB::table('message')->paginate(5);
+            <?php
+                 $result = DB::table('messages')->orderBy('ctime', 'desc')->paginate(5);
                  foreach ($result as $key => $record) {
             ?>
         <div class="messagePanel">
             <div class="messageHead">
-            <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
-            <div class="mtime">Time(<?php echo date('Y-m-d H:i:s');?>)</div>
-            <div class="mview">View(45)</div>
+                <div class="headImg"><a href="/sns_web/public/home"><img src="common/image/cat.jpg" class="img-circle himg"></a></div>
+                <div class="mtime">Time(<?php echo date('Y-m-d H:i:s',$record->ctime)?>)</div>
+                <div class="mview">View(45)</div>
             </div>
+
             <div class="message">
-                <div class="content">{{$record->content}}</div>
+                <div class="content" data-id="{{$record->mid}}"> {{$record->content}}</div>
             </div>
 
             <div class="reply">
@@ -62,10 +64,12 @@
                     <span class="zan-count">22</span>
                 </div>
             </div>
+            <!--引入赞列表-->
+            @include('contents.message-zanlist')
             <!--引入评论-->
             @include('contents.message-comments')
             <div class="replySubmit">
-                <textarea class="userReply" class="form-control" rows="3"></textarea>
+                <textarea class="userReply" id="commentText" class="form-control" rows="3"></textarea>
                 <button type="button" onclick="submitReply(this)" class="btn btn-success confirmBtn">确认</button>
             </div>
         </div>
